@@ -5,8 +5,4 @@ FROM renku/singleuser:latest
 
 # install the python dependencies
 COPY requirements.txt /tmp/requirements.txt
-USER 0
 RUN pip install -r /tmp/requirements.txt
-
-# switch to the user that will be used in the notebook
-USER 1000
