@@ -4,7 +4,8 @@ FROM renku/singleuser:latest
 # COPY src /code/src
 
 # install the python dependencies
-COPY environment.yml environment.yml
-RUN conda env update -q -f environment.yml && \
+COPY requirements.txt environment.yml /tmp/
+RUN conda env update -q -f /tmp/environment.yml && \
+    /opt/conda/bin/pip install -r /tmp/requirements.txt && \
     conda clean -y --all && \
     conda env export -n "root"
