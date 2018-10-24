@@ -5,7 +5,6 @@ FROM renku/singleuser:latest
 
 # install the python dependencies
 COPY environment.yml environment.yml
-RUN conda env create -q -f environment.yml && \
+RUN conda env update -q -f environment.yml && \
     conda clean -y --all && \
-    conda env export -n "{{ name }}" && \
-    "$CONDA_DIR/envs/{{ name }}/bin/python" -m ipykernel install --user --name "{{ name }}" --display-name "Python 3 ({{ name }})"
+    conda env export -n "root"
