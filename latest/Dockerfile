@@ -4,8 +4,8 @@ FROM renku/singleuser:latest
 # COPY src /code/src
 
 # install the python dependencies
-COPY environment.yml environment.yml
-RUN conda env create -q -f environment.yml && \
+COPY requirements.txt environment.yml /tmp/
+RUN conda env update -q -f /tmp/environment.yml && \
+    /opt/conda/bin/pip install -r /tmp/requirements.txt && \
     conda clean -y --all && \
-    conda env export -n "{{ name }}" && \
-    "$CONDA_DIR/envs/{{ name }}/bin/python" -m ipykernel install --user --name "{{ name }}" --display-name "Python 3 ({{ name }})"
+    conda env export -n "root"

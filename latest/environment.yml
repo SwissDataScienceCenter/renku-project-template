@@ -4,4 +4,4 @@ channels:
 dependencies:
   - jupyter
   - jupyterlab
-prefix: "/opt/conda/envs/{{ name }}"
+prefix: "/opt/conda"
