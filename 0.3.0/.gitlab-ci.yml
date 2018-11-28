@@ -24,7 +24,7 @@ image_build:
 
 dot:
   stage: build
-  image: renku/renku-python:v0.3.0
+  image: renku/renku-python:v0.3.1
   script:
     - renku log --format dot $(git ls-files --no-empty-directory --recurse-submodules) > graph.dot
   artifacts:
