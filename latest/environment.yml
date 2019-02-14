@@ -1,7 +1,7 @@
-name: "{{ name }}"
+name: "base"
 channels:
   - defaults
 dependencies:
-  - jupyter
-  - jupyterlab
+# - add packages here
+# - one per line
 prefix: "/opt/conda"
