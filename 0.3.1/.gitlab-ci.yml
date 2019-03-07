@@ -15,7 +15,7 @@ image_build:
   before_script:
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN http://$CI_REGISTRY
   script:
-    - docker pull renku/singleuser:latest
+    - docker pull renku/singleuser:0.3.3-renku0.4.0
     - CI_COMMIT_SHA_7=$(echo $CI_COMMIT_SHA | cut -c1-7)
     - docker build --tag $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA_7 .
     - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA_7
