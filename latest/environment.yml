@@ -1,7 +1,7 @@
 name: "base"
 channels:
   - defaults
-dependencies:
+# dependencies:
 # - add packages here
 # - one per line
 prefix: "/opt/conda"
