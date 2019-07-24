@@ -1,7 +1,8 @@
 -
   folder: python-minimal
   name: Basic Python Project
-  description: The simplest renku project with a basic directory structure and necessary supporting files.
+  description: The simplest Python-based renku project with a basic directory structure and necessary supporting files.
 -
   folder: R-minimal
   name: Basic R Project
+  description: The simplest R-based renku project with a basic directory structure and necessary supporting files.
