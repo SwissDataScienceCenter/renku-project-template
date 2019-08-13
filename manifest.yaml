@@ -6,3 +6,11 @@
   folder: R-minimal
   name: Basic R Project
   description: The simplest R-based renku project with a basic directory structure and necessary supporting files.
+-
+  folder: 0.4.0
+  name: For test reasons
+  description: An older python version for testing reasons.
+-
+  folder: 0.3.2
+  name: Another old template
+  description: Old test template for testing.
