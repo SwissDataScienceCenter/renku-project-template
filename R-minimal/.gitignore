@@ -373,3 +373,5 @@ tags
 .history
 
 # End of https://www.gitignore.io/api/macos,python,R,linux,vim,emacs,visualstudiocode,intellij
+
+.renku.lock
