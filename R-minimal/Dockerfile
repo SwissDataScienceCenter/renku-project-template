@@ -4,8 +4,5 @@ FROM renku/singleuser-r:0.3.7-renku0.5.2
 # COPY src /code/src
 
 # install the python dependencies
-COPY requirements.txt environment.yml /tmp/
-RUN conda env update -q -f /tmp/environment.yml && \
-    /opt/conda/bin/pip install -r /tmp/requirements.txt && \
-    conda clean -y --all && \
-    conda env export -n "root"
+COPY requirements.txt /tmp/
+RUN pip3 install -r /tmp/requirements.txt
