@@ -5,7 +5,7 @@
   updated: http://schema.org/dateUpdated
   version: http://schema.org/schemaVersion
 '@type': foaf:Project
-created: {{ date-created }}
+created: {{ date_created }}
 name: {{ name }}
-updated: {{ date-updated }}
+updated: {{ date_updated }}
 version: '1'
