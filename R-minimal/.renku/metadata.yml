@@ -1,10 +1,10 @@
 '@context':
-  created: http://schema.org/dateCreated
-  foaf: http://xmlns.com/foaf/0.1/
-  name: foaf:name
-  updated: http://schema.org/dateUpdated
-  version: http://schema.org/schemaVersion
-'@type': foaf:Project
+  created: schema:dateCreated
+  schema: http://schema.org/
+  name: schema:name
+  updated: schema:dateUpdated
+  version: schema:schemaVersion
+'@type': schema:Project
 created: {{ date_created }}
 name: {{ name }}
 updated: {{ date_updated }}
