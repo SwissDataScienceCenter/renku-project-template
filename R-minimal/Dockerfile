@@ -3,8 +3,10 @@ FROM renku/singleuser-r:0.4.1-renku0.7.1
 # Uncomment and adapt if code is to be included in the image
 # COPY src /code/src
 
-# Uncomment and adapt if your R packages require extra linux (ubuntu) software
-#
+# Uncomment and adapt if your R or python packages require extra linux (ubuntu) software
+# e.g. the following installs apt-utils and vim; each pkg on its own line, all lines
+# except for the last end with backslash '\' to continue the RUN line
+# 
 # USER root
 # RUN apt-get update && \
 #    apt-get install -y --no-install-recommends \
