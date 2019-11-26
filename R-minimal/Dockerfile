@@ -3,6 +3,15 @@ FROM renku/singleuser-r:0.4.1-renku0.7.1
 # Uncomment and adapt if code is to be included in the image
 # COPY src /code/src
 
+# Uncomment and adapt if your R packages require extra linux (ubuntu) software
+#
+# USER root
+# RUN apt-get update && \
+#    apt-get install -y --no-install-recommends \
+#    apt-utils \
+#    vim
+# USER ${NB_USER}
+
 # install the R dependencies
 COPY install.R /tmp/
 RUN R -f /tmp/install.R
