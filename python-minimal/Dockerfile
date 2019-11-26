@@ -1,4 +1,4 @@
-FROM renku/singleuser:0.4.2-renku0.8.1
+FROM renku/singleuser:0.4.3-renku0.8.2
 
 # Uncomment and adapt if code is to be included in the image
 # COPY src /code/src
