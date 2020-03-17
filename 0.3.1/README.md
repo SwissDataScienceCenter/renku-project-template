@@ -1,2 +1,0 @@
-# {{ name }}
-A Renku project.

@@ -1,7 +1,0 @@
-name: "{{ name }}"
-channels:
-  - defaults
-dependencies:
-  - jupyter
-  - jupyterlab
-prefix: "/opt/conda"
