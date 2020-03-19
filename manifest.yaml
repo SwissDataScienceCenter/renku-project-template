@@ -7,6 +7,6 @@
   name: Basic R Project
   description: The simplest R-based renku project with a basic directory structure and necessary supporting files.
 -
-  folder: renku-minimal
-  name: Basic Renku and Renkulab-compatible Project
+  folder: minimal
+  name: Minimal Renku
   description: The simplest renku project template with files for renku CLI and launching projects on renkulab.
