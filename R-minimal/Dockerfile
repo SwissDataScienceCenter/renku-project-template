@@ -1,6 +1,5 @@
-FROM renku/singleuser-r:0.4.4-renku0.9.0
+FROM renku/renkulab:renku0.10.0-r3.6.1-0.6.0
 
-RUN pipx install renku=='0.9.1' --force 
 # Uncomment and adapt if code is to be included in the image
 # COPY src /code/src
 
