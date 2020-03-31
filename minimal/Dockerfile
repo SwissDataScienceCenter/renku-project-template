@@ -1,4 +1,4 @@
-FROM renku/renkulab:renku0.10.1-py3.7-0.6.1
+FROM renku/renkulab:renku0.10.2-py3.7-0.6.2
 
 # Uncomment and adapt if code is to be included in the image
 # COPY src /code/src
