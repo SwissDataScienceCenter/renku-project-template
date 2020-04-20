@@ -1,4 +1,8 @@
 # {{ name }}
+{% if description %}
+{{ description }}
+{% endif %}
+## Introduction
 
 This is a Renku project - basically a git repository with some
 bells and whistles. You'll find we have already created some
