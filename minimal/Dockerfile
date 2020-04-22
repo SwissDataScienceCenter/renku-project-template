@@ -1,4 +1,4 @@
-FROM renku/renkulab:renku0.10.2-py3.7-0.6.1
+FROM renku/renkulab:renku0.10.3-py3.7-0.6.2
 
 # Uncomment and adapt if code is to be included in the image
 # COPY src /code/src
@@ -16,6 +16,9 @@ FROM renku/renkulab:renku0.10.2-py3.7-0.6.1
 
 # Uncomment and adapt if you want to automatically install
 # python dependencies when the Docker image builds (pip or conda)
+# Note: you will need to add a (pip) requirements.txt file
+#       AND a (conda) environment.yml file for the below code to run,
+#       but you can remove one or the other.
 #
 # COPY requirements.txt environment.yml /tmp/
 # RUN conda env update -q -f /tmp/environment.yml && \
