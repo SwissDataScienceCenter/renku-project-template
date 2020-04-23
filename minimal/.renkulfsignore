@@ -6,3 +6,7 @@
 # usage.
 
 *.ipynb # Warning: removing this line will check generated ipynb files (e.g. from papermill) into LFS: they will no longer be displayed in the renku UI
+*.py
+*.r
+*.md
+*.rst
