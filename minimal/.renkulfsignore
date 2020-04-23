@@ -3,10 +3,10 @@
 #
 # By default, renku commands track all files above the renku configured lfs_threshold
 # with git LFS to prevent accidentally checking in large files (default=100kb).
-# You can update this threshold by calling renku config lfs_threshold <size>kb
+# You can update this threshold by calling 'renku config lfs_threshold <size>kb'.
 #
-# Use this file to specify particular paths regardless of the threshold size.
-# The syntax is the same as .gitignore (https://git-scm.com/docs/gitignore).
+# Use this file to specify particular paths to *not track* with LFS regardless of
+# their size. The syntax is the same as .gitignore (https://git-scm.com/docs/gitignore).
 # Remember: files listed here, when generated during renku commands, will add to
 # the size of your repo, and could slow things down.
 #
