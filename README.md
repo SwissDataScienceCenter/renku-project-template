@@ -42,6 +42,20 @@ Initial contents explain how to use a renku project.
 `.renku` - Directory containing renku metadata that renku commands update
 (caution: don't update this manually).
 
+`.renkulfsignore` - File similar to [.gitignore](https://git-scm.com/docs/gitignore)
+for telling renku to NOT store listed files in git LFS. By default, `renku`
+commands (like `renku run` and `renku dataset`) store outputs in
+[git LFS](https://git-lfs.github.com/) to prevent accidentally committing large
+files to git. However, sometimes:
+
+* an imported dataset will come with code (e.g. `*.py`)
+* a code file (like `*.ipynb`) will be generated from
+  a `renku run` (e.g. with [papermill](https://papermill.readthedocs.io/en/latest/))
+* a generated or imported file will be small enough (e.g. <1mb) that you want to use
+  `git diff` to view changes, or view the file in the renku UI.
+
+In these cases you can list files in the `.renkulfsignore` file to treat those
+files like normal repo files when calling `renku` commands, untracked by git LFS.
 
 ## For organizing project files
 
