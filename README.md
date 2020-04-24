@@ -42,6 +42,37 @@ Initial contents explain how to use a renku project.
 `.renku` - Directory containing renku metadata that renku commands update
 (caution: don't update this manually).
 
+`.renkulfsignore` - File similar to [.gitignore](https://git-scm.com/docs/gitignore)
+for telling renku to NOT store listed files in git LFS. Use in conjunction with
+`renku config lfs_threshold <[size]kb>` to tell renku to NOT store files above a
+threshold size in LFS. Initial configuration is set to 100kb.
+
+By default, `renku` commands (like `renku run` and `renku dataset`) store all output
+files above a configurable threshold size of 100KB in [git LFS](https://git-lfs.github.com/)
+to prevent accidentally committing large files to git. It's bad to git commit
+large files (e.g. datasets, graphics, videos, audio samples) without being tracked
+by git LFS, because they slow down git commands (and thus renku commands). However,
+sometimes:
+
+* an imported dataset will come with markdown (`*.md`) and/or code (e.g. `*.py`).
+* a code file (like `*.ipynb`) will be generated from
+  a `renku run` (e.g. with [papermill](https://papermill.readthedocs.io/en/latest/)).
+* generated or imported data could be small (e.g. <100kb)
+
+Tracking files with LFS is good, but limits your ability to use commands like
+`git diff` to view changes, and to see the contents of the files in the project's
+page on renkulab.
+
+Thus, you can edit `.renkulfsignore` to add files with particular paths or extensions
+that are relevant for your project. `renku` commands will consult `.renkulfsignore`
+and not track those files with git LFS.
+
+Note: When you start a new interactive environment, by default the LFS-tracked
+files (e.g. files above the configured threshold AND not on this list) are in
+their "pointer" form. Run `renku storage pull <filepath>` to pull the real content
+into each file, or `git lfs pull` to replace all pointers with real content all
+at once. Since these are large files, you might be better off pulling them one at
+a time.
 
 ## For organizing project files
 
