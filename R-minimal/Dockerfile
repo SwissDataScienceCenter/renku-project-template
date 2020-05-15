@@ -1,4 +1,6 @@
 FROM renku/renkulab:renku0.10.3-r3.6.1-0.6.2
+# see https://github.com/SwissDataScienceCenter/renkulab-docker
+# to swap this image for the latest version available
 
 # Uncomment and adapt if code is to be included in the image
 # COPY src /code/src
