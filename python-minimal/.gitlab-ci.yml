@@ -3,7 +3,6 @@
 variables:
   GIT_STRATEGY: fetch
   GIT_SSL_NO_VERIFY: "true"
-  GIT_SUBMODULE_STRATEGY: recursive
   GIT_LFS_SKIP_SMUDGE: 1
 
 stages:
