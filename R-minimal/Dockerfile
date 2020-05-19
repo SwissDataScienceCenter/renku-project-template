@@ -1,4 +1,4 @@
-FROM renku/renkulab:renku0.10.3-r3.6.1-0.6.2
+FROM renku/renkulab-r:4.0.0-renku0.10.4-0.6.3
 # see https://github.com/SwissDataScienceCenter/renkulab-docker
 # to swap this image for the latest version available
 
