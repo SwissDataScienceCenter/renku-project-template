@@ -1,4 +1,5 @@
-FROM renku/renkulab-py:3.7-renku0.10.4-0.6.3
+ARG RENKU_BASE_IMAGE=renku/renkulab-py:3.7-d2d0b9e
+FROM ${RENKU_BASE_IMAGE}
 # see https://github.com/SwissDataScienceCenter/renkulab-docker
 # to swap this image for the latest version available
 
@@ -22,3 +23,9 @@ RUN conda env update -q -f /tmp/environment.yml && \
     /opt/conda/bin/pip install -r /tmp/requirements.txt && \
     conda clean -y --all && \
     conda env export -n "root"
+
+########################################################
+# Do not edit this section and do not add anything below
+ARG RENKU_VERSION=0.10.4
+RUN pipx install --force renku==${RENKU_VERSION}
+########################################################
