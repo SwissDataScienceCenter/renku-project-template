@@ -1,7 +1,12 @@
+# For finding latest versions of the base image see
+# https://github.com/SwissDataScienceCenter/renkulab-docker
 ARG RENKU_BASE_IMAGE=renku/renkulab-py:3.7-d2d0b9e
 FROM ${RENKU_BASE_IMAGE}
-# see https://github.com/SwissDataScienceCenter/renkulab-docker
-# to swap this image for the latest version available
+
+# RENKU_VERSION determines the version of the renku CLI
+# that will be used in this image. To find the latest version,
+# visit https://github.com/SwissDataScienceCenter/renku-python/releases.
+ARG RENKU_VERSION=0.10.4
 
 # Uncomment and adapt if code is to be included in the image
 # COPY src /code/src
@@ -31,6 +36,5 @@ FROM ${RENKU_BASE_IMAGE}
 
 ########################################################
 # Do not edit this section and do not add anything below
-ARG RENKU_VERSION=0.10.4
 RUN pipx install --force renku==${RENKU_VERSION}
 ########################################################
