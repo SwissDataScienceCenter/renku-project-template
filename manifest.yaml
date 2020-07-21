@@ -13,6 +13,11 @@
   description: The simplest R bioconductor-3.11-based renku project with a basic directory structure and necessary supporting files.
   variables:
     description: short description added at the beginning of the readme file
+- folder: julia-minimal
+  name: Basic Julia (1.4.2) Project
+  description: The simplest Julia 1.4.2-based renku project with a basic directory structure and necessary supporting files.
+  variables:
+    description: short description added at the beginning of the readme file
 - folder: minimal
   name: Minimal Renku
   description: The simplest renku project template with files for renku CLI and launching projects on renkulab.
