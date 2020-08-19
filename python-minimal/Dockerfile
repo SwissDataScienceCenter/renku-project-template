@@ -7,7 +7,7 @@ FROM ${RENKU_BASE_IMAGE}
 # that will be used in this image. To find the latest version,
 # visit https://pypi.org/project/renku/#history.
 
-ARG RENKU_VERSION=0.10.4
+ARG RENKU_VERSION=0.11.1
 
 # Uncomment and adapt if code is to be included in the image
 # COPY src /code/src
