@@ -1,6 +1,6 @@
 # For finding latest versions of the base image see
 # https://github.com/SwissDataScienceCenter/renkulab-docker
-ARG RENKU_BASE_IMAGE=renku/renkulab-r:4.0.0-d2d0b9e
+ARG RENKU_BASE_IMAGE=renku/renkulab-r:4.0.0-57d473c
 FROM ${RENKU_BASE_IMAGE}
 
 # RENKU_VERSION determines the version of the renku CLI
