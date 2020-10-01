@@ -1,13 +1,13 @@
 # For finding latest versions of the base image see
 # https://github.com/SwissDataScienceCenter/renkulab-docker
-ARG RENKU_BASE_IMAGE=renku/renkulab-py:3.7-57d473c
+ARG RENKU_BASE_IMAGE=renku/renkulab-py:3.7-0.7.0
 FROM ${RENKU_BASE_IMAGE}
 
 # RENKU_VERSION determines the version of the renku CLI
 # that will be used in this image. To find the latest version,
 # visit https://pypi.org/project/renku/#history.
 
-ARG RENKU_VERSION=0.11.1
+ARG RENKU_VERSION=0.11.2
 
 # Uncomment and adapt if code is to be included in the image
 # COPY src /code/src
