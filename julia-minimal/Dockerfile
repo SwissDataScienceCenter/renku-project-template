@@ -2,13 +2,6 @@ FROM renku/renkulab-julia:1.4.2-renku0.10.4-a31920c
 # see https://github.com/SwissDataScienceCenter/renkulab-docker
 # to swap this image for the latest version available
 
-# RENKU_VERSION determines the version of the renku CLI
-# that will be used in this image. To find the latest version,
-# visit https://pypi.org/project/renku/#history.
-
-ARG RENKU_VERSION=0.11.4
-
-
 # Uncomment and adapt if code is to be included in the image
 # COPY src /code/src
 
