@@ -1,6 +1,6 @@
 # see https://github.com/SwissDataScienceCenter/renkulab-docker
 # to swap this image for the latest version available
-FROM renku/renkulab-bioc:RELEASE_3_11-0.7.0
+FROM renku/renkulab-bioc:RELEASE_3_11-0.7.1
 
 # RENKU_VERSION determines the version of the renku CLI
 # that will be used in this image. To find the latest version,
