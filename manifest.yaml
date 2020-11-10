@@ -3,6 +3,9 @@
   description: The simplest Python-3.7-based renku project with a basic directory structure and necessary supporting files.
   variables:
     description: short description added at the beginning of the readme file
+  immutable_template_files:
+  - .gitlab-ci.yml
+  allow_template_update: true
 - folder: R-minimal
   name: Basic R (4.0) Project
   description: The simplest R-4.0-based renku project with a basic directory structure and necessary supporting files.
