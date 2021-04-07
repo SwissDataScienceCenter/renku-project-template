@@ -1,6 +1,6 @@
 - folder: python-minimal
-  name: Basic Python (3.7) Project
-  description: The simplest Python-3.7-based renku project with a basic directory structure and necessary supporting files.
+  name: Basic Python (3.8) Project
+  description: The simplest Python-3.8-based renku project with a basic directory structure and necessary supporting files.
   variables:
     description: short description added at the beginning of the readme file
 - folder: R-minimal
@@ -9,8 +9,8 @@
   variables:
     description: short description added at the beginning of the readme file
 - folder: bioc-minimal
-  name: R-Bioconductor (3.11) Project
-  description: The simplest R bioconductor-3.11-based renku project with a basic directory structure and necessary supporting files.
+  name: R-Bioconductor (3.12) Project
+  description: The simplest R bioconductor-3.12-based renku project with a basic directory structure and necessary supporting files.
   variables:
     description: short description added at the beginning of the readme file
 - folder: julia-minimal
