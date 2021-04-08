@@ -4,8 +4,8 @@
   variables:
     description: short description added at the beginning of the readme file
 - folder: R-minimal
-  name: Basic R (4.0) Project
-  description: The simplest R-4.0-based renku project with a basic directory structure and necessary supporting files.
+  name: Basic R (4.0.4) Project
+  description: The simplest R-4.0.4-based renku project with a basic directory structure and necessary supporting files.
   variables:
     description: short description added at the beginning of the readme file
 - folder: bioc-minimal
