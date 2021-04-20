@@ -23,3 +23,5 @@
   description: The simplest renku project template with files for renku CLI and launching projects on renkulab.
   variables:
     tag: this is a tag
+    more: this is another tag
+  
