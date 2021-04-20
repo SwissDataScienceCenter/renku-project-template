@@ -21,4 +21,5 @@
 - folder: minimal
   name: Minimal Renku
   description: The simplest renku project template with files for renku CLI and launching projects on renkulab.
-  variables: {}
+  variables:
+    tag: this is a tag
