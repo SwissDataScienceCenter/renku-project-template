@@ -24,12 +24,9 @@
   variables:
     tag: this is a tag
     more: this is another tag
-    - name: the name of this variable is X
-      description: another description
 - folder: plugins
   name: List of plug-ins
   description: list of plugins to install in the template
-  type: enum
-  enum: ["none", "vscode", "vnc", "vscode+vnc", "vnc+imaging"]
-  default: none
-  
+  variables:
+    plugin: vscode
+    otherplugin: imaging
