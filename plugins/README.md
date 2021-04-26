@@ -4,6 +4,14 @@
 {% endif %}
 ## Introduction
 
+{{ plugin }}
+
+and
+
+{{ otherplugin }}
+
+## Other information...
+
 This is a Renku project - basically a git repository with some
 bells and whistles. You'll find we have already created some
 useful things like `data` and `notebooks` directories and
