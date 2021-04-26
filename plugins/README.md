@@ -10,6 +10,22 @@ and
 
 {{ otherplugin }}
 
+## Testing if elses
+
+{% if switch %}
+
+The value of the switch is: {{ switch }}
+
+{% endif %}
+
+However, if it is off...
+
+{% if switchoff %}
+
+The value of switchoff is: {{ switchoff }}
+
+{% endif %}
+
 ## Other information...
 
 This is a Renku project - basically a git repository with some

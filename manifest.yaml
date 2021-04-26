@@ -30,3 +30,5 @@
   variables:
     plugin: vscode
     otherplugin: imaging
+    switch: True
+    switchoff: False
