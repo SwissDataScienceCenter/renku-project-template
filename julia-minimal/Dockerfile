@@ -29,11 +29,11 @@ COPY Project.toml Manifest.toml /tmp/
 RUN mkdir /tmp/julia-pkg && \
     cp /tmp/Project.toml /tmp/Manifest.toml /tmp/julia-pkg/ && \
     julia -e'using Pkg; Pkg.activate("/tmp/julia-pkg/"); Pkg.instantiate(); Pkg.precompile()'
-    
+
 # RENKU_VERSION determines the version of the renku CLI
 # that will be used in this image. To find the latest version,
 # visit https://pypi.org/project/renku/#history.
-ARG RENKU_VERSION=0.14.2
+ARG RENKU_VERSION=0.15.1
 
 ########################################################
 # Do not edit this section and do not add anything below
