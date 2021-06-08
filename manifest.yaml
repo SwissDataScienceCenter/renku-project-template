@@ -14,8 +14,8 @@
   variables:
     description: short description added at the beginning of the readme file
 - folder: julia-minimal
-  name: Basic Julia (1.4.2) Project
-  description: The simplest Julia 1.4.2-based renku project with a basic directory structure and necessary supporting files.
+  name: Basic Julia (1.6.1) Project
+  description: The simplest Julia 1.6.1-based renku project with a basic directory structure and necessary supporting files.
   variables:
     description: short description added at the beginning of the readme file
 - folder: minimal
