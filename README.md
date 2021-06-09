@@ -1,9 +1,7 @@
 # renku-project-template
-A repository to hold template files for new Renku projects to be used on project
-creation by the Renku clients. The next sections outline what different files in
-the template are used for.
 
-
+A repository of base templates for new Renku projects. The next sections outline
+what different files in the template are used for.
 ## For running interactive environments from Renkulab
 
 `Dockerfile` - File for building a docker image that you can launch from renkulab,
@@ -21,6 +19,22 @@ out of the project on `git push` to renkulab so that you can launch your interac
 `.dockerignore` - Files and directories to be excluded from docker build (you can
   append to this list); https://docs.docker.com/engine/reference/builder/#dockerignore-file.
 
+### Setting the version of the renku-cli
+
+The default version of the renku CLI used in the interactive environment is
+specified in the Dockerfile in a line similar to this:
+
+```
+ARG RENKU_VERSION={{ __renku_version__ | default("0.15.1") }}
+```
+
+The client creating the project (either via the UI in RenkuLab or the renku CLI)
+can override this default setting. The version is set as follows:
+
+* if the client (the renku core service or the renku CLI) is using a released
+  version, then pass this to the project template
+* if the client is on a development version, use the default provided by the
+  template
 
 ## For managing software dependencies
 
