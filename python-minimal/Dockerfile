@@ -34,13 +34,16 @@ ARG RENKU_VERSION={{ __renku_version__ | default("0.15.1") }}
 
 # Install renku from pypi or from github if it's a dev version
 RUN if [ -n "$RENKU_VERSION" ] ; then \
-        pipx uninstall renku ; \
-        gitversion=$(echo "$RENKU_VERSION" | sed -n "s/^[[:digit:]]\+\.[[:digit:]]\+\.[[:digit:]]\+\(\.dev[[:digit:]]\+\)*\(+g\([a-f0-9]\+\)\)*\(+dirty\)*$/\3/p"); \
-        if [ -n "$gitversion" ] ; then \
-            pipx install --force "git+https://github.com/SwissDataScienceCenter/renku-python.git@$gitversion" ;\
-        else \
-            pipx install --force renku==${RENKU_VERSION} ;\
+        currentversion=$(pipx list | sed -n "s/^\s*package\srenku\s\([^,]\+\),.*$/\1/p") ; \
+        if [ "$RENKU_VERSION" != "$currentversion" ] ; then \
+            pipx uninstall renku ; \
+            gitversion=$(echo "$RENKU_VERSION" | sed -n "s/^[[:digit:]]\+\.[[:digit:]]\+\.[[:digit:]]\+\(\.dev[[:digit:]]\+\)*\(+g\([a-f0-9]\+\)\)*\(+dirty\)*$/\3/p"); \
+            if [ -n "$gitversion" ] ; then \
+                pipx install --force "git+https://github.com/SwissDataScienceCenter/renku-python.git@$gitversion" ;\
+            else \
+                pipx install --force renku==${RENKU_VERSION} ;\
+            fi \
         fi \
-    ; fi
+    fi
 
 ########################################################
