@@ -25,7 +25,7 @@ The default version of the renku CLI used in the interactive environment is
 specified in the Dockerfile in a line similar to this:
 
 ```
-ARG RENKU_VERSION={{ __renku_version__ | default("0.15.1") }}
+ARG RENKU_VERSION={{ __renku_version__ | default("0.16.0") }}
 ```
 
 The client creating the project (either via the UI in RenkuLab or the renku CLI)
