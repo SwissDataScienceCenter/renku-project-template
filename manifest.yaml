@@ -18,6 +18,11 @@
   description: The simplest Julia 1.6.1-based renku project with a basic directory structure and necessary supporting files.
   variables:
     description: short description added at the beginning of the readme file
+- folder: batch-minimal
+  name: Batch Version of Basic Python (3.8) Project
+  description: The simplest Python-3.8-based renku project for batch execution with a basic directory structure and necessary supporting files.
+  variables:
+    description: short description added at the beginning of the readme file
 - folder: minimal
   name: Minimal Renku
   description: The simplest renku project template with files for renku CLI and launching projects on renkulab.
