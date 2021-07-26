@@ -1,3 +1,4 @@
+{% raw -%}
 #!/bin/bash -l
 {% for key, value in sbatch_options.items() -%}
 {% if value -%}
@@ -50,3 +51,4 @@ rm ${HOME}/runs/${SLURM_JOB_ID}-run_HPC.sh
 END
 
 srun singularity run -C -B ${SCRATCH} docker://${RENKU_IMAGE} bash ${HOME}/runs/${SLURM_JOB_ID}-run_HPC.sh
+{%- endraw %}
