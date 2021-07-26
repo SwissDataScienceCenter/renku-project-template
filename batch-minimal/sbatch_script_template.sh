@@ -1,11 +1,7 @@
 {% raw -%}
 #!/bin/bash -l
-{% for key, value in sbatch_options.items() -%}
-{% if value -%}
-#SBATCH --{{ key }}={{ value }}
-{%- else -%}
-#SBATCH --{{ key }}
-{%- endif %}
+{% for option in sbatch_options.split() -%}
+#SBATCH --{{ option }}
 {% endfor %}
 
 export RENKU_IMAGE={{ sbatch_image }}
