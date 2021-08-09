@@ -1,6 +1,6 @@
 - folder: python-minimal
-  name: Basic Python (3.8) Project
-  description: The simplest Python-3.8-based renku project with a basic directory structure and necessary supporting files.
+  name: Basic Python (3.9) Project
+  description: The simplest Python-3.9-based renku project with a basic directory structure and necessary supporting files.
   variables:
     description: short description added at the beginning of the readme file
 - folder: R-minimal
