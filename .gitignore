@@ -283,4 +283,7 @@ tags
 # Ignore all local history of files
 .history
 
+### JetBrains IDEs ###
+.idea/
+
 # End of https://www.gitignore.io/api/macos,python,R,linux,vim,emacs,visualstudiocode
