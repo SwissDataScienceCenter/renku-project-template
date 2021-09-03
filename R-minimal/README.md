@@ -1,6 +1,6 @@
 # {{ name }}
-{% if description %}
-{{ description }}
+{% if __project_description__ %}
+{{ __project_description__ }}
 {% endif %}
 ## Introduction
 
