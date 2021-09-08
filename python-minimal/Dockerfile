@@ -1,6 +1,6 @@
 # For finding latest versions of the base image see
 # https://github.com/SwissDataScienceCenter/renkulab-docker
-ARG RENKU_BASE_IMAGE=renku/renkulab-py:3.9-0.10.0
+ARG RENKU_BASE_IMAGE=renku/renkulab-py:3.9-0.10.1
 FROM ${RENKU_BASE_IMAGE}
 
 # Uncomment and adapt if code is to be included in the image
@@ -34,14 +34,15 @@ ARG RENKU_VERSION={{ __renku_version__ | default("0.16.0") }}
 
 # Install renku from pypi or from github if it's a dev version
 RUN if [ -n "$RENKU_VERSION" ] ; then \
-        currentversion=$(pipx list | sed -n "s/^\s*package\srenku\s\([^,]\+\),.*$/\1/p") ; \
+        source .renku/venv/bin/activate ; \
+        currentversion=$(renku --version) ; \
         if [ "$RENKU_VERSION" != "$currentversion" ] ; then \
-            pipx uninstall renku ; \
-            gitversion=$(echo "$RENKU_VERSION" | sed -n "s/^[[:digit:]]\+\.[[:digit:]]\+\.[[:digit:]]\+\(\.dev[[:digit:]]\+\)*\(+g\([a-f0-9]\+\)\)*\(+dirty\)*$/\3/p"); \
+            pip uninstall renku ; \
+            gitversion=$(echo "$RENKU_VERSION" | sed -n "s/^[[:digit:]]\+\.[[:digit:]]\+\.[[:digit:]]\+\(\.dev[[:digit:]]\+\)*\(+g\([a-f0-9]\+\)\)*\(+dirty\)*$/\3/p") ; \
             if [ -n "$gitversion" ] ; then \
-                pipx install --force "git+https://github.com/SwissDataScienceCenter/renku-python.git@$gitversion" ;\
+                pip install --force "git+https://github.com/SwissDataScienceCenter/renku-python.git@$gitversion" ;\
             else \
-                pipx install --force renku==${RENKU_VERSION} ;\
+                pip install --force renku==${RENKU_VERSION} ;\
             fi \
         fi \
     fi
