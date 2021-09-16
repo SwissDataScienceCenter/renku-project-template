@@ -2,6 +2,7 @@
   name: Basic Python (3.9) Project
   description: The simplest Python-3.9-based renku project with a basic directory structure and necessary supporting files.
   variables: {}
+  icon: python-minimal.png
 - folder: R-minimal
   name: Basic R (4.0.5) Project
   description: The simplest R-4.0.5-based renku project with a basic directory structure and necessary supporting files.
