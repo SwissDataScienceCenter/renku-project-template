@@ -37,7 +37,7 @@ RUN if [ -n "$RENKU_VERSION" ] ; then \
         source .renku/venv/bin/activate ; \
         currentversion=$(renku --version) ; \
         if [ "$RENKU_VERSION" != "$currentversion" ] ; then \
-            pip uninstall renku ; \
+            pip uninstall renku -y ; \
             gitversion=$(echo "$RENKU_VERSION" | sed -n "s/^[[:digit:]]\+\.[[:digit:]]\+\.[[:digit:]]\+\(\.dev[[:digit:]]\+\)*\(+g\([a-f0-9]\+\)\)*\(+dirty\)*$/\3/p") ; \
             if [ -n "$gitversion" ] ; then \
                 pip install --force "git+https://github.com/SwissDataScienceCenter/renku-python.git@$gitversion" ;\
