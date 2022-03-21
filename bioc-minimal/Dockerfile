@@ -1,6 +1,6 @@
 # see https://github.com/SwissDataScienceCenter/renkulab-docker
 # to swap this image for the latest version available
-FROM renku/renkulab-bioc:RELEASE_3_14-0.11.0
+FROM renku/renkulab-bioc:RELEASE_3_14-0.11.1
 
 # Uncomment and adapt if code is to be included in the image
 # COPY src /code/src
@@ -27,7 +27,7 @@ RUN pip3 install -r /tmp/requirements.txt
 # RENKU_VERSION determines the version of the renku CLI
 # that will be used in this image. To find the latest version,
 # visit https://pypi.org/project/renku/#history.
-ARG RENKU_VERSION={{ __renku_version__ | default("1.0.5") }}
+ARG RENKU_VERSION={{ __renku_version__ | default("1.1.2") }}
 
 ########################################################
 # Do not edit this section and do not add anything below
