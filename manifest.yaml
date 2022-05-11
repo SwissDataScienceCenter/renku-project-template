@@ -17,6 +17,7 @@
   name: Basic Julia (1.7.1) Project
   description: The simplest Julia 1.7.1-based renku project with a basic directory structure and necessary supporting files.
   variables: {}
+  icon: julialang.png
 - folder: minimal
   name: Minimal Renku
   description: The simplest renku project template with files for renku CLI and launching projects on renkulab.
