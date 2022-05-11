@@ -12,6 +12,7 @@
   name: R-Bioconductor (3.14) Project
   description: The simplest R bioconductor-3.14-based renku project with a basic directory structure and necessary supporting files.
   variables: {}
+  icon: bioconductor.png
 - folder: julia-minimal
   name: Basic Julia (1.7.1) Project
   description: The simplest Julia 1.7.1-based renku project with a basic directory structure and necessary supporting files.
