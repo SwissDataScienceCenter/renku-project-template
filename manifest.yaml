@@ -5,12 +5,12 @@
   icon: python-minimal.png
 - folder: R-minimal
   name: Basic R (4.2.0) Project
-  description: The simplest R-4.1.2-based renku project with a basic directory structure and necessary supporting files.
+  description: The simplest R-4.2.0-based renku project with a basic directory structure and necessary supporting files.
   variables: {}
   icon: R-minimal.png
 - folder: bioc-minimal
   name: R-Bioconductor (3.15) Project
-  description: The simplest R bioconductor-3.14-based renku project with a basic directory structure and necessary supporting files.
+  description: The simplest R bioconductor-3.15-based renku project with a basic directory structure and necessary supporting files.
   variables: {}
   icon: bioconductor.png
 - folder: julia-minimal
