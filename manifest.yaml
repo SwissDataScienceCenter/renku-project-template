@@ -3,40 +3,32 @@
   description: The simplest Python-3.9-based renku project with a basic directory structure and necessary supporting files.
   variables: {}
   icon: python-minimal.png
-
 - folder: R-minimal
   name: Basic R (4.2.0) Project
   description: The simplest R-4.2.0-based renku project with a basic directory structure and necessary supporting files.
   variables: {}
   icon: R-minimal.png
-
 - folder: bioc-minimal
   name: R-Bioconductor (3.15) Project
   description: The simplest R bioconductor-3.15-based renku project with a basic directory structure and necessary supporting files.
   variables: {}
   icon: bioconductor.png
-
 - folder: julia-minimal
   name: Basic Julia (1.7.1) Project
   description: The simplest Julia 1.7.1-based renku project with a basic directory structure and necessary supporting files.
   variables: {}
   icon: julialang.png
-
 - folder: mmoda-mimimal
   name: MMODA
   description: Quick-start template for MMODA workflow
   variables: {}
   icon: mmoda.png
-
 - folder: python-heasoft-osa
   name: Python (3.9) HEASoft (6.29c) OSA (11.2+)
   description: Software useful for High-Energy Astrophysics
   variables: {}
   icon: python-osa-heasoft.png
-
-
 - folder: minimal
   name: Minimal Renku
   description: The simplest renku project template with files for renku CLI and launching projects on renkulab.
   variables: {}
-
