@@ -2,6 +2,7 @@
 
 A repository of base templates for new Renku projects. The next sections outline
 what different files in the template are used for.
+
 ## For running interactive environments from Renkulab
 
 `Dockerfile` - File for building a docker image that you can launch from renkulab,
