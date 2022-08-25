@@ -33,8 +33,8 @@ Baseline knowledge of {[Renv](https://rstudio.github.io/renv/articles/renv.html)
 This repo can be used just like the ordinary R template except that the installed packages and their version are set by {Renv} in `renv.lock` and `install.R` now just uses {Renv}'s tools to install all the packages in the lock file during the Docker image build.
 
 Updating the `renv.lock` file can now be done with Renv's standard approaches in an interactive session and the changes to the lock file committed as usual.
-For example you might run `renv::install("my_package")` and then to update the lockfile to include your package with: `renv::snapshop()` then commit the changes in the lock file to git.
-Then the next time `renv::restore()` is run in `install.R` during the image build your new package will be installed in the image.
+For example you might run `renv::install("aPackage")`, use `aPackage` in your code somewhere and then update the lockfile to include this package with: `renv::snapshop()` and commit the changes in the lock file to git.
+Then the next time `renv::restore()` is run in `install.R` during the image build and the new package will be installed in the image.
 
 It is heavily based / substantially copied from this github repository: https://github.com/auwerxlab/renku-r-template
 
