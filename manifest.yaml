@@ -8,6 +8,11 @@
   description: The simplest R-4.2.0-based renku project with a basic directory structure and necessary supporting files.
   variables: {}
   icon: R-minimal.png
+- folder: Renv
+  name: R (4.2.0) Project with Renv package managment
+  description: A simple R-4.2.0-based renku project with a basic directory structure and necessary supporting files.
+  variables: {}
+  icon: Renv_hex.png
 - folder: bioc-minimal
   name: R-Bioconductor (3.15) Project
   description: The simplest R bioconductor-3.15-based renku project with a basic directory structure and necessary supporting files.
