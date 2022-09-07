@@ -38,7 +38,7 @@ ARG RENKU_VERSION={{ __renku_version__ | default("1.6.0") }}
 # Do not edit this section and do not add anything below
 
 # Install renku from pypi or from github if it's a dev version
-RUN if [ -n "$RENKU_VERSION" ] ; then \
+RUN if [ -n "$RENKU_VERSION" ]; then \
         source .renku/venv/bin/activate ; \
         currentversion=$(renku --version) ; \
         if [ "$RENKU_VERSION" != "$currentversion" ] ; then \
