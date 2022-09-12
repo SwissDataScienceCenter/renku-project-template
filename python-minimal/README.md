@@ -12,7 +12,7 @@ a `Dockerfile`.
 ## Working with the project
 
 The simplest way to start your project is right from the Renku
-platform - just click on the `Environments` tab and start a new session.
+platform - just click on the `Sessions` tab and start a new session.
 This will start an interactive environment right in your browser.
 
 To work with the project anywhere outside the Renku platform,
