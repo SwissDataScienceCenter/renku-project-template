@@ -19,13 +19,27 @@ RUN apt-get -y update && \
     libncursesw5-dev \
     parallel \
     libgit2-dev \
-    tk-dev
+    tk-dev \
+    jq \
+    curl \
+    librsvg2-2 \
+    librsvg2-dev \
+    librsvg2-common
+
+# note jq and curl are used in renv_install.sh
+# librsvg2 libs are common dependencies of some R plotting libraries
 
 USER ${NB_USER}
 
 # install the R dependencies
-COPY install.R /tmp/
+## make the renv install script and renv.lock file
+## available in the working dir and run the install
+COPY renv_install.sh .
+COPY renv.lock .
+RUN bash renv_install.sh
+## ensure renv lock is in the project directory
 COPY renv.lock /home/rstudio/renv.lock
+COPY install.R /tmp/
 RUN R -f /tmp/install.R
 
 ## Clean up the /home/rstudio directory to avoid confusion in nested R projects
