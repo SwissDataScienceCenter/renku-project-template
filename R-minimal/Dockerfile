@@ -1,6 +1,6 @@
 # For finding latest versions of the base image see
 # https://github.com/SwissDataScienceCenter/renkulab-docker
-ARG RENKU_BASE_IMAGE=renku/renkulab-r:4.2.0-0.12.0
+ARG RENKU_BASE_IMAGE=renku/renkulab-r:4.2.0-0.13.1
 FROM ${RENKU_BASE_IMAGE}
 
 # Uncomment and adapt if code is to be included in the image
