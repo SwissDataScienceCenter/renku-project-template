@@ -19,7 +19,7 @@ To work with the project anywhere outside the Renku platform,
 click the `Settings` tab where you will find the
 git repo URLs - use `git` to clone the project on whichever machine you want.
 
-### Changing interactive environment dependencies
+### Changing interactive session dependencies
 
 Initially we install a very minimal set of packages to keep the images small.
 However, you can add python and conda packages in `requirements.txt` and
