@@ -45,7 +45,7 @@ RUN if [ -n "$RENKU_VERSION" ] ; then \
 
 # install the python dependencies
 COPY requirements.txt environment.yml /tmp/
-RUN conda env update -q -f /tmp/environment.yml && \
+RUN mamba env update -q -f /tmp/environment.yml && \
     /opt/conda/bin/pip install -r /tmp/requirements.txt && \
-    conda clean -y --all && \
-    conda env export -n "root"
+    mamba clean -y --all && \
+    mamba env export -n "root"
