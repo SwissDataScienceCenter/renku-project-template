@@ -1,0 +1,7 @@
+# Renku
+.renku.lock
+.renku/tmp
+.renku/cache
+
+# JupyterLab
+.ipynb_checkpoints
