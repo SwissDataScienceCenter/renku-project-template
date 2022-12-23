@@ -19,7 +19,7 @@ To work with the project anywhere outside the Renku platform,
 click the `Settings` tab where you will find the
 git repo URLs - use `git` to clone the project on whichever machine you want.
 
-### Changing interactive environment dependencies
+### Changing interactive session dependencies
 
 Initially we install a very minimal set of packages to keep the images small.
 However, you can add Julia packages as you normally would: for example, you
@@ -28,7 +28,7 @@ use the `Pkg` API from within a Jupyter Notebook or Console.
 
 If a Julia package has python dependencies, you can add them
 by modifying `requirements.txt` or `environment.yml` (conda) If you need more
-fine-grained control over your environment, please see [the documentation](https://renku.readthedocs.io/en/latest/user/advanced_interfaces.html#dockerfile-modifications).
+fine-grained control over your environment, please see [the documentation](https://renku.readthedocs.io/en/stable/topic-guides/customizing-sessions.html).
 
 ## Project configuration
 

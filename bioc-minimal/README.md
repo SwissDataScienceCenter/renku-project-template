@@ -19,13 +19,13 @@ To work with the project anywhere outside the Renku platform,
 click the `Settings` tab where you will find the
 git repo URLs - use `git` to clone the project on whichever machine you want.
 
-### Changing interactive environment dependencies
+### Changing interactive session dependencies
 
 Initially we install a very minimal set of packages to keep the images small.
 However, you can add python and conda packages in `requirements.txt` and
 `environment.yml`, and R packages to `install.R` (listed as, for example,
 `install.packages("ggplot2")`), to your heart's content. If you need more fine-grained
-control over your environment, please see [the documentation](https://renku.readthedocs.io/en/latest/user/advanced_interfaces.html#dockerfile-modifications).
+control over your environment, please see [the documentation](https://renku.readthedocs.io/en/stable/topic-guides/customizing-sessions.html).
 
 ## Project configuration
 
