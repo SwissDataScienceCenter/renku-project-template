@@ -28,7 +28,7 @@ use the `Pkg` API from within a Jupyter Notebook or Console.
 
 If a Julia package has python dependencies, you can add them
 by modifying `requirements.txt` or `environment.yml` (conda) If you need more
-fine-grained control over your environment, please see [the documentation](https://renku.readthedocs.io/en/stable/topic-guides/sessions/customizing-sessions.html).
+fine-grained control over your environment, please see [the documentation](https://renku.readthedocs.io/en/stable/topic-guides/customizing-sessions.html).
 
 ## Project configuration
 

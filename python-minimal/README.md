@@ -24,7 +24,7 @@ git repo URLs - use `git` to clone the project on whichever machine you want.
 Initially we install a very minimal set of packages to keep the images small.
 However, you can add python and conda packages in `requirements.txt` and
 `environment.yml` to your heart's content. If you need more fine-grained
-control over your environment, please see [the documentation](https://renku.readthedocs.io/en/stable/topic-guides/sessions/customizing-sessions.html).
+control over your environment, please see [the documentation](https://renku.readthedocs.io/en/stable/topic-guides/customizing-sessions.html).
 
 ## Project configuration
 
