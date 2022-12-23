@@ -3,6 +3,31 @@
 ARG RENKU_BASE_IMAGE=renku/renkulab-py:3.9-0.13.1
 FROM ${RENKU_BASE_IMAGE}
 
+########################################################
+#        Renku install section - do not edit           #
+
+# RENKU_VERSION determines the version of the renku CLI
+# that will be used in this image. To find the latest version,
+# visit https://pypi.org/project/renku/#history.
+ARG RENKU_VERSION={{ __renku_version__ | default("1.6.0") }}
+
+# Install renku from pypi or from github if a dev version
+RUN if [ -n "$RENKU_VERSION" ] ; then \
+    source .renku/venv/bin/activate ; \
+    currentversion=$(renku --version) ; \
+    if [ "$RENKU_VERSION" != "$currentversion" ] ; then \
+    pip uninstall renku -y ; \
+    gitversion=$(echo "$RENKU_VERSION" | sed -n "s/^[[:digit:]]\+\.[[:digit:]]\+\.[[:digit:]]\+\(rc[[:digit:]]\+\)*\(\.dev[[:digit:]]\+\)*\(+g\([a-f0-9]\+\)\)*\(+dirty\)*$/\4/p") ; \
+    if [ -n "$gitversion" ] ; then \
+    pip install --force "git+https://github.com/SwissDataScienceCenter/renku-python.git@$gitversion" ;\
+    else \
+    pip install --force renku==${RENKU_VERSION} ;\
+    fi \
+    fi \
+    fi
+#             End renku install section                #
+########################################################
+
 # Uncomment and adapt if code is to be included in the image
 # COPY src /code/src
 
@@ -28,28 +53,3 @@ FROM ${RENKU_BASE_IMAGE}
 #    /opt/conda/bin/pip install -r /tmp/requirements.txt && \
 #    conda clean -y --all && \
 #    conda env export -n "root"
-
-# RENKU_VERSION determines the version of the renku CLI
-# that will be used in this image. To find the latest version,
-# visit https://pypi.org/project/renku/#history.
-ARG RENKU_VERSION={{ __renku_version__ | default("1.6.0") }}
-
-########################################################
-# Do not edit this section and do not add anything below
-
-# Install renku from pypi or from github if it's a dev version
-RUN if [ -n "$RENKU_VERSION" ] ; then \
-        source .renku/venv/bin/activate ; \
-        currentversion=$(renku --version) ; \
-        if [ "$RENKU_VERSION" != "$currentversion" ] ; then \
-            pip uninstall renku -y ; \
-            gitversion=$(echo "$RENKU_VERSION" | sed -n "s/^[[:digit:]]\+\.[[:digit:]]\+\.[[:digit:]]\+\(rc[[:digit:]]\+\)*\(\.dev[[:digit:]]\+\)*\(+g\([a-f0-9]\+\)\)*\(+dirty\)*$/\4/p") ; \
-            if [ -n "$gitversion" ] ; then \
-                pip install --force "git+https://github.com/SwissDataScienceCenter/renku-python.git@$gitversion" ;\
-            else \
-                pip install --force renku==${RENKU_VERSION} ;\
-            fi \
-        fi \
-    fi
-
-########################################################
