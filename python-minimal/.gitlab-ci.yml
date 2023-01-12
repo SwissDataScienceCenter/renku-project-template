@@ -20,5 +20,6 @@ image_build: # keep this job name -> necessary for frontend
       --context "${CI_PROJECT_DIR}"
       --dockerfile "${CI_PROJECT_DIR}/Dockerfile"
       --destination "${CI_REGISTRY_IMAGE}:${CI_COMMIT_SHA_7}"
+      --compressed-caching=false
       --cache=true
       --cache-copy-layers
