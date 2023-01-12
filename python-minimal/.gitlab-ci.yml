@@ -6,7 +6,7 @@ variables:
 stages:
   - build
 
-image_build_kaniko:
+image_build: # keep this job name -> necessary for frontend
   stage: build
   image:
     name: gcr.io/kaniko-project/executor:debug
