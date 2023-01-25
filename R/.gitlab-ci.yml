@@ -2,6 +2,7 @@ variables:
   GIT_STRATEGY: fetch
   GIT_SSL_NO_VERIFY: "true"
   GIT_LFS_SKIP_SMUDGE: 1
+  DOCKER_BUILDKIT: 1
 
 stages:
   - build
