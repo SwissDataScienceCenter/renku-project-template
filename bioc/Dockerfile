@@ -1,14 +1,16 @@
 # see https://github.com/SwissDataScienceCenter/renkulab-docker
 # to swap this image for the latest version available
-FROM renku/renkulab-bioc:RELEASE_3_15-0.13.1
+ARG RENKU_BASE_IMAGE=renku/renkulab-bioc:RELEASE_3_15-0.13.1
 
 ########################################################
 #        Renku install section - do not edit           #
 
+FROM ${RENKU_BASE_IMAGE} as builder
+
 # RENKU_VERSION determines the version of the renku CLI
 # that will be used in this image. To find the latest version,
 # visit https://pypi.org/project/renku/#history.
-ARG RENKU_VERSION={{ __renku_version__ | default("2.0.0") }}
+ARG RENKU_VERSION={{ __renku_version__ | default("1.11.2") }}
 
 # Install renku from pypi or from github if a dev version
 RUN if [ -n "$RENKU_VERSION" ] ; then \
@@ -24,9 +26,10 @@ RUN if [ -n "$RENKU_VERSION" ] ; then \
             fi \
         fi \
     fi
-#             End renku install section                #
+#             End Renku install section                #
 ########################################################
 
+FROM ${RENKU_BASE_IMAGE}
 
 # Uncomment and adapt if code is to be included in the image
 # COPY src /code/src
@@ -48,4 +51,6 @@ RUN R -f /tmp/install.R
 
 # install the python dependencies
 COPY requirements.txt /tmp/
-RUN pip3 install -r /tmp/requirements.txt
+RUN pip3 install -r /tmp/requirements.txt --no-cache-dir
+
+COPY --from=builder ${HOME}/.renku/venv ${HOME}/.renku/venv
