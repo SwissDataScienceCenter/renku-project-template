@@ -58,4 +58,4 @@ RUN mkdir /tmp/julia-pkg && \
     cp /tmp/Project.toml /tmp/Manifest.toml /tmp/julia-pkg/ && \
     julia -e'using Pkg; Pkg.activate("/tmp/julia-pkg/"); Pkg.instantiate(); Pkg.precompile()'
 
-COPY --from=builder ${HOME}/.renku ${HOME}/.renku
+COPY --from=builder ${HOME}/.renku/venv ${HOME}/.renku/venv

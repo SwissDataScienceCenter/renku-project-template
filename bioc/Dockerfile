@@ -53,4 +53,4 @@ RUN R -f /tmp/install.R
 COPY requirements.txt /tmp/
 RUN pip3 install -r /tmp/requirements.txt --no-cache-dir
 
-COPY --from=builder ${HOME}/.renku ${HOME}/.renku
+COPY --from=builder ${HOME}/.renku/venv ${HOME}/.renku/venv

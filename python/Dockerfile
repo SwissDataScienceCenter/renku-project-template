@@ -52,4 +52,4 @@ RUN mamba env update -q -f /tmp/environment.yml && \
     mamba clean -y --all && \
     mamba env export -n "root"
 
-COPY --from=builder ${HOME}/.renku ${HOME}/.renku
+COPY --from=builder ${HOME}/.renku/venv ${HOME}/.renku/venv
