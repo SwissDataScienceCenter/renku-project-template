@@ -56,6 +56,7 @@ RUN mamba env update -q -f /tmp/environment.yml && \
 COPY Project.toml Manifest.toml /tmp/
 RUN mkdir /tmp/julia-pkg && \
     cp /tmp/Project.toml /tmp/Manifest.toml /tmp/julia-pkg/ && \
-    julia -e'using Pkg; Pkg.activate("/tmp/julia-pkg/"); Pkg.instantiate(); Pkg.precompile()'
+    julia -e'using Pkg; Pkg.activate("/tmp/julia-pkg/"); Pkg.instantiate(); Pkg.precompile()' && \
+    rm -rf ${HOME}/.renku/venv
 
 COPY --from=builder ${HOME}/.renku/venv ${HOME}/.renku/venv

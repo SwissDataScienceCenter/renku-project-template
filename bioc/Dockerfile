@@ -51,6 +51,7 @@ RUN R -f /tmp/install.R
 
 # install the python dependencies
 COPY requirements.txt /tmp/
-RUN pip3 install -r /tmp/requirements.txt --no-cache-dir
+RUN pip3 install -r /tmp/requirements.txt --no-cache-dir && \
+    rm -rf ${HOME}/.renku/venv
 
 COPY --from=builder ${HOME}/.renku/venv ${HOME}/.renku/venv

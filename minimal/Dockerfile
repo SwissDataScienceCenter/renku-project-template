@@ -57,4 +57,6 @@ FROM ${RENKU_BASE_IMAGE}
 #    conda clean -y --all && \
 #    conda env export -n "root"
 
+RUN rm -rf ${HOME}/.renku/venv
+
 COPY --from=builder ${HOME}/.renku/venv ${HOME}/.renku/venv

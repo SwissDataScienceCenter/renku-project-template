@@ -50,6 +50,7 @@ COPY requirements.txt environment.yml /tmp/
 RUN mamba env update -q -f /tmp/environment.yml && \
     /opt/conda/bin/pip install -r /tmp/requirements.txt --no-cache-dir && \
     mamba clean -y --all && \
-    mamba env export -n "root"
+    mamba env export -n "root" && \
+    rm -rf ${HOME}/.renku/venv
 
 COPY --from=builder ${HOME}/.renku/venv ${HOME}/.renku/venv
