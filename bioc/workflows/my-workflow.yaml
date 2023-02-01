@@ -25,8 +25,8 @@ steps:
           path: data/output/results.csv
     parameters:
       - n:
-        prefix: -n
-        value: 10
+          prefix: -n
+          value: 10
 
   # === Adding more steps ===
   # You can add as many steps as you want to your workflow by copy and pasting the step template above
@@ -35,4 +35,3 @@ steps:
   # make-plot:
     # command: python $another-script $output-data $my-plot
     # ...
-
