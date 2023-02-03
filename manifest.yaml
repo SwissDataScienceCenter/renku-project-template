@@ -1,7 +1,11 @@
 - folder: python
   name: Basic Python (3.9) Project
   description: The simplest Python-3.9-based renku project with a basic directory structure and necessary supporting files.
-  variables: {}
+  variables:
+    k8s_runner:
+      description: Use a k8s-based gitlab runner
+      type: boolean
+      default_value: False
   icon: python-minimal.png
 - folder: R
   name: Basic R (4.2.0) Project
