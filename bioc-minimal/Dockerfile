@@ -1,11 +1,7 @@
-# see https://github.com/SwissDataScienceCenter/renkulab-docker
-# to swap this image for the latest version available
-ARG RENKU_BASE_IMAGE=renku/renkulab-bioc:RELEASE_3_15-0.14.0
-
 ########################################################
 #        Renku install section - do not edit           #
 
-FROM ${RENKU_BASE_IMAGE} as builder
+FROM renku/renkulab-bioc:RELEASE_3_15-0.14.0 as builder
 
 # RENKU_VERSION determines the version of the renku CLI
 # that will be used in this image. To find the latest version,
@@ -29,7 +25,7 @@ RUN if [ -n "$RENKU_VERSION" ] ; then \
 #             End Renku install section                #
 ########################################################
 
-FROM ${RENKU_BASE_IMAGE}
+FROM renku/renkulab-bioc:RELEASE_3_15-0.14.0
 
 # Uncomment and adapt if code is to be included in the image
 # COPY src /code/src
