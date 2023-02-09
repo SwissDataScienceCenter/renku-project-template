@@ -1,24 +1,24 @@
-- id: python-minimal
+- folder: python-minimal
   name: Basic Python (3.9) Project
   description: The simplest Python-3.9-based renku project with a basic directory structure and necessary supporting files.
   variables: {}
   icon: python-minimal.png
-- id: R-minimal
+- folder: R-minimal
   name: Basic R (4.2.0) Project
   description: The simplest R-4.2.0-based renku project with a basic directory structure and necessary supporting files.
   variables: {}
   icon: R-minimal.png
-- id: bioc-minimal
+- folder: bioc-minimal
   name: R-Bioconductor (3.15) Project
   description: The simplest R bioconductor-3.15-based renku project with a basic directory structure and necessary supporting files.
   variables: {}
   icon: bioconductor.png
-- id: julia-minimal
+- folder: julia-minimal
   name: Basic Julia (1.7.1) Project
   description: The simplest Julia 1.7.1-based renku project with a basic directory structure and necessary supporting files.
   variables: {}
   icon: julialang.png
-- id: minimal
+- folder: minimal
   name: Minimal Renku
   description: The simplest renku project template with files for renku CLI and launching projects on renkulab.
   variables: {}
