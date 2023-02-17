@@ -1,6 +1,6 @@
 # For finding latest versions of the base image see
 # https://github.com/SwissDataScienceCenter/renkulab-docker
-ARG RENKU_BASE_IMAGE=renku/renkulab-julia:1.7.1-0.13.1
+ARG RENKU_BASE_IMAGE=renku/renkulab-julia:1.7.1-0.14.0
 
 ########################################################
 #        Renku install section - do not edit           #
