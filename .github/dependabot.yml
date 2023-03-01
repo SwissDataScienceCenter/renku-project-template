@@ -1,0 +1,22 @@
+version: 2
+updates:
+  - package-ecosystem: "docker"
+    directory: "docker/python"
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "docker"
+    directory: "docker/R"
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "docker"
+    directory: "docker/julia"
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "docker"
+    directory: "docker/bioc"
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "docker"
+    directory: "docker/minimal"
+    schedule:
+      interval: "weekly"
