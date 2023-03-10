@@ -1,7 +1,7 @@
 ########################################################
 #        Renku install section - do not edit           #
 
-FROM renku/renkulab-julia:1.7.1-0.14.0 as builder
+FROM renku/renkulab-julia:1.7.1-0.15.0 as builder
 
 # RENKU_VERSION determines the version of the renku CLI
 # that will be used in this image. To find the latest version,
@@ -25,7 +25,7 @@ RUN if [ -n "$RENKU_VERSION" ] ; then \
 #             End Renku install section                #
 ########################################################
 
-FROM renku/renkulab-julia:1.7.1-0.14.0
+FROM renku/renkulab-julia:1.7.1-0.15.0
 
 # Uncomment and adapt if code is to be included in the image
 # COPY src /code/src
