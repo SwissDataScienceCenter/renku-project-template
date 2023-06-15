@@ -3,16 +3,29 @@ variables:
   GIT_SSL_NO_VERIFY: "true"
   GIT_LFS_SKIP_SMUDGE: 1
   DOCKER_BUILDKIT: 1
+  BUILDX_VERSION: "v0.11.0"
+  BUILDX_ARCH: "linux-amd64"
+
 
 stages:
   - build
 
 image_build:
   stage: build
-  image: docker:stable
-  before_script:
+  image: docker:stable-git
+  before_script: 
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN http://$CI_REGISTRY
+    - wget -O /usr/bin/docker-buildx
+      https://github.com/docker/buildx/releases/download/${BUILDX_VERSION}/buildx-${BUILDX_VERSION}.${BUILDX_ARCH}
+    - chmod +x /usr/bin/docker-buildx
   script: |
-    CI_COMMIT_SHA_7=$(echo $CI_COMMIT_SHA | cut -c1-7)
-    docker build --tag $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA_7 .
-    docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA_7
+    LAST_CHANGE=$(git log -n 1 --pretty=format:%H -- $(cat .envfiles) | cut -c1-7)
+    CURRENT_COMMIT=$(git rev-parse HEAD | cut -c1-7)
+    IMAGE_NAME=registry.renkulab.io/rok.roskar/adore
+    if [ $LAST_CHANGE = $CURRENT_COMMIT ]
+    then 
+        docker build -t $IMAGE_NAME:$CURRENT_COMMIT .
+    else
+        docker-buildx imagetools create $IMAGE_NAME:$LAST_CHANGE --tag $IMAGE_NAME:$CURRENT_COMMIT || \
+          docker-buildx build --push --tag $IMAGE_NAME:$CURRENT_COMMIT . 
+    fi
