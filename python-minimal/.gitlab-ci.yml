@@ -21,11 +21,6 @@ image_build:
   script: |
     LAST_CHANGE=$(git log -n 1 --pretty=format:%H -- $(cat .envfiles) | cut -c1-7)
     CURRENT_COMMIT=$(git rev-parse HEAD | cut -c1-7)
-    IMAGE_NAME=registry.renkulab.io/rok.roskar/adore
-    if [ $LAST_CHANGE = $CURRENT_COMMIT ]
-    then 
-        docker build -t $IMAGE_NAME:$CURRENT_COMMIT .
-    else
-        docker-buildx imagetools create $IMAGE_NAME:$LAST_CHANGE --tag $IMAGE_NAME:$CURRENT_COMMIT || \
-          docker-buildx build --push --tag $IMAGE_NAME:$CURRENT_COMMIT . 
-    fi
+    docker-buildx imagetools create $CI_REGISTRY_IMAGE:$LAST_CHANGE --tag $CI_REGISTRY_IMAGE:$CURRENT_COMMIT || \
+      docker-buildx build --push --tag $CI_REGISTRY_IMAGE:$CURRENT_COMMIT . 
+
