@@ -2,7 +2,7 @@
   name: Python
   description: A Python Renku project.
   variables: 
-    version: 
+    python-version: 
       description: Set the Python version (default 3.10).
       default: 3.10
       type: string
