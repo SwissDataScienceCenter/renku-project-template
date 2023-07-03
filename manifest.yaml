@@ -1,8 +1,11 @@
 - folder: python-minimal
-  name: Python (3.10) Project
+  name: Python
   description: A Python Renku project.
   variables: 
-    python_version: Set the python version.
+    version: 
+      description: Set the python version.
+      default: 3.10
+      type: string
   icon: python-minimal.png
   ssh_supported: true
 - folder: R-minimal
