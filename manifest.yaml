@@ -3,7 +3,7 @@
   description: A Python Renku project.
   variables: 
     version: 
-      description: Set the python version.
+      description: Set the Python version (default 3.10).
       default: 3.10
       type: string
   icon: python-minimal.png
