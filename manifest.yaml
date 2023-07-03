@@ -45,7 +45,7 @@
   icon: bioconductor.png
   ssh_supported: true
 - folder: julia-minimal
-  name: Julia (1.9.0) Project
+  name: Julia
   description: A Julia Renku project.
   variables:
     julia_version: 
