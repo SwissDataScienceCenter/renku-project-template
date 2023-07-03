@@ -4,8 +4,12 @@
   variables: 
     python_version: 
       description: Set the Python version (default 3.10).
-      default: 3.10
-      type: string
+      default_value: 3.10
+      type: enum
+      enum: 
+        - "3.9"
+        - "3.10"
+        - "3.11"
   icon: python-minimal.png
   ssh_supported: true
 - folder: R-minimal
