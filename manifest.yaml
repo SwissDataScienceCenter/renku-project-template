@@ -7,9 +7,9 @@
       default_value: "3.10"
       type: enum
       enum: 
+        - "3.8"
         - "3.9"
         - "3.10"
-        - "3.11"
   icon: python-minimal.png
   ssh_supported: true
 - folder: R-minimal
