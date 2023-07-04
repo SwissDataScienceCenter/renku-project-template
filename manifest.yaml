@@ -1,25 +1,61 @@
 - folder: python-minimal
-  name: Python (3.10) Project
+  name: Python
   description: A Python Renku project.
-  variables: {}
+  variables: 
+    python_version: 
+      description: Set the Python version.
+      default_value: "3.10"
+      type: enum
+      enum: 
+        - "3.8"
+        - "3.9"
+        - "3.10"
   icon: python-minimal.png
   ssh_supported: true
 - folder: R-minimal
-  name: R (4.2.0) Project
+  name: R
   description: An R Renku project.
-  variables: {}
+  variables: 
+    R_version: 
+      description: Set the R version.
+      default_value: "4.2.0"
+      type: enum
+      enum: 
+        - "4.1.0"
+        - "4.1.1"
+        - "4.1.2"
+        - "4.2.0"
+        - "devel"
   icon: R-minimal.png
   ssh_supported: true
 - folder: bioc-minimal
-  name: R-Bioconductor (3.17) Project
-  description: An R bioconductor Renku project.
-  variables: {}
+  name: Bioconductor
+  description: An R-Bioconductor Renku project.
+  variables:
+    bioc_version: 
+      description: Set the Bioconductor version.
+      default_value: "3_17"
+      type: enum
+      enum: 
+        - "3_14"
+        - "3_15"
+        - "3_16"
+        - "3_17"
+        - "devel"
   icon: bioconductor.png
   ssh_supported: true
 - folder: julia-minimal
-  name: Julia (1.9.0) Project
+  name: Julia
   description: A Julia Renku project.
-  variables: {}
+  variables:
+    julia_version: 
+      description: Set the Bioconductor version.
+      default_value: "1.9.0"
+      type: enum
+      enum: 
+        - "1.7.1"
+        - "1.8.5"
+        - "1.9.0"
   icon: julialang.png
   ssh_supported: true
 - folder: minimal
