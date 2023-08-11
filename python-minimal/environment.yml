@@ -1,4 +1,6 @@
 name: "base"
+# WARNING : As Renku makes use of mamba for more efficient package builds, please use EITHER the Ananconda "defaults" channel OR the popular "conda-forge" channels
+# For more details : https://mamba.readthedocs.io/en/latest/user_guide/troubleshooting.html#mixing-the-defaults-and-conda-forge-channels
 channels:
   - defaults
 # dependencies:
