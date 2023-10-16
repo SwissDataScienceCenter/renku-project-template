@@ -1,0 +1,37 @@
+# === Welcome to the template Renku Workflow file! ===
+# You can use this file to encode in what order your data processing steps should be run,
+# making it easier for you to run your workflow, and for others to understand it!
+
+# === How to use this template ===
+# Replace the script and data paths in the template below to match your analysis commands. 
+# Then, run `renku run my-workflow.yaml` in a terminal to execute the workflow!
+# If you are working in a notebook, run `! renku run my-workflow.yaml` in a notebook cell. 
+
+# === Docs ===
+# To learn much more about what you can do with the Renku Workflow File, see our docs:
+# https://renku.readthedocs.io/en/stable/topic-guides/workflows/workflow-file.html
+
+name: my-workflow
+steps:
+  step-one:
+    command: python $n $my-script $input-data $output-data
+    inputs:
+      - my-script:
+          path: src/script.py
+      - input-data:
+          path: data/input/sample_data.csv
+    outputs:
+      - output-data:
+          path: data/output/results.csv
+    parameters:
+      - n:
+          prefix: -n
+          value: 10
+
+  # === Adding more steps ===
+  # You can add as many steps as you want to your workflow by copy and pasting the step template above
+  # TIP: To run just one step from a workflow, simply add the step name to the command, like this:
+  #   `renku run my-workflow.yaml make-plot`
+  # make-plot:
+    # command: python $another-script $output-data $my-plot
+    # ...
