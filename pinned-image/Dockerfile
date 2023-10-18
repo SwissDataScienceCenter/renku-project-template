@@ -1,7 +1,7 @@
 ########################################################
 #        Renku install section - do not edit           #
 
-FROM renku/renkulab-py-homedir-envs:{{ python_version | default("3.10") }}-0.20.0 as builder
+FROM renku/renkulab-py-homedir-envs:{{ python_version | default("3.10") }}-fa7c104 as builder
 
 # RENKU_VERSION determines the version of the renku CLI
 # that will be used in this image. To find the latest version,
@@ -29,7 +29,7 @@ RUN if [ -n "$RENKU_VERSION" ] ; then \
 # wait for the image to build and then update the pinned image in .renku/renku.ini or 
 # via the Settings panel in Renkulab.
 
-FROM renku/renkulab-py-homedir-envs:{{ python_version | default("3.10") }}-0.20.0
+FROM renku/renkulab-py-homedir-envs:{{ python_version | default("3.10") }}-fa7c104
 
 COPY --from=builder ${HOME}/.renku/venv ${HOME}/.renku/venv
 
