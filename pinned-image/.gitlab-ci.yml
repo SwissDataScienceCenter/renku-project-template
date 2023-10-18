@@ -1,0 +1,20 @@
+variables:
+  GIT_STRATEGY: fetch
+  GIT_SSL_NO_VERIFY: "true"
+  GIT_LFS_SKIP_SMUDGE: 1
+  DOCKER_BUILDKIT: 1
+
+stages:
+  - build
+
+image_build:
+  stage: build
+  image: docker:stable
+  rules:
+    # Run when there is a tag that starts with a semantic versioning tag
+    - if: '$CI_COMMIT_TAG =~ /^\d+\.\d+\.\d+/'
+  before_script:
+    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN http://$CI_REGISTRY
+  script: |
+    docker build --tag $CI_REGISTRY_IMAGE:$CI_COMMIT_TAG .
+    docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_TAG

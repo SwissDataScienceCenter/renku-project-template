@@ -63,3 +63,16 @@
   description: The simplest Renku project template with files for Renku CLI and launching projects on RenkuLab.
   variables: {}
   ssh_supported: true
+- folder: pinned-image
+  name: Pinned image
+  description: A Renku project with Python and a pinned image
+  variables: 
+    python_version: 
+      description: Set the Python version.
+      default_value: "3.10"
+      type: enum
+      enum: 
+        - "3.8"
+        - "3.9"
+        - "3.10"
+  ssh_supported: true
